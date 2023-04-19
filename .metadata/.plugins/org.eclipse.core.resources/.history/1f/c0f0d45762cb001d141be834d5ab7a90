@@ -1,0 +1,18 @@
+/***********************************************************************/
+/***********************************************************************/
+/************************ AUTHER : Hanin Anwar  ************************/
+/************************ LAYER  : LIB          ************************/
+/************************ VERSION : 1.00         ************************/
+/***********************************************************************/
+/***********************************************************************/
+
+
+#include "MAPPING.h"
+
+int32_t Mapping(int32_t Copy_int32_tInputMin,int32_t Copy_int32_tInputMax,int32_t Copy_int32_tOutputMin,int32_t Copy_int32_tOutputMax,int32_t Copy_int32_tInputValue)
+{
+	int32_t Local_int32_tMappedValue;
+	Local_int32_tMappedValue = (((Copy_int32_tInputValue - Copy_int32_tInputMin)*(Copy_int32_tOutputMax - Copy_int32_tOutputMin))/(Copy_int32_tInputMax - Copy_int32_tInputMin)) + Copy_int32_tInputMin;
+
+	return Local_int32_tMappedValue;
+}

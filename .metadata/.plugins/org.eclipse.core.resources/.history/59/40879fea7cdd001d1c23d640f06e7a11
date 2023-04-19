@@ -1,0 +1,54 @@
+#include "stdint.h"
+
+#include "../Inc/RCC_config.h"
+#include "../Inc/RCC_private.h"
+#include "../Inc/RCC_interface.h"
+
+
+int8_t RCC_Int8SetClockSrc(int8_t Copy_int8ClockType , int8_t Copy_int8Status)
+{
+	int8_t Local_int8ErrorState = 0;
+
+	if (Copy_int8ClockType == HSE_CLK)
+	{
+		RCC->
+	}
+	else if (Copy_int8ClockType == HSI_CLK)
+	{
+
+	}
+
+	else if (Copy_int8ClockType == PLL_CLK)
+	{
+
+	}
+
+	else
+	{
+		Local_int8ErrorState = 1;
+	}
+	return Local_int8ErrorState;
+
+}
+
+int8_t RCC_Int8SetSysClock(int8_t Copy_int8ClockType)
+{
+
+}
+
+
+int8_t RCC_Int8HSEConfig(int8_t Copy_int8DivisionScale)
+{
+
+}
+
+
+int8_t RCC_Int8PLLConfig(int8_t Copy_int8PLLMul , int8_t Copy_int8PLLSrc)
+{
+
+}
+
+int8_t RCC_Int8PeripheralClkControl(int8_t Copy_int8PeripheralClk , int8_t Copy_int8PeripheralName)
+{
+
+}

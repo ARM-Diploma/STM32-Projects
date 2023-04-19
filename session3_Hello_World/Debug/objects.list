@@ -1,0 +1,7 @@
+"./Inc/1-MCAL/6.Timers/TIMER_program.o"
+"./Inc/1-MCAL/8.SPI/SPI_program.o"
+"./Inc/4-LIB/Mapping.o"
+"./Src/main.o"
+"./Src/syscalls.o"
+"./Src/sysmem.o"
+"./Startup/startup_stm32f446retx.o"

@@ -1,0 +1,14 @@
+18:47:46 **** Incremental Build of configuration Debug for project Session7_assembly ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:46:6: warning: unused variable 'var' [-Wunused-variable]
+   46 |  int var = 20;
+      |      ^~~
+C:\Users\HANINA~1\AppData\Local\Temp\ccijPI53.s: Assembler messages:
+C:\Users\HANINA~1\AppData\Local\Temp\ccijPI53.s:67: Error: undefined symbol r3 used as an immediate value
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+18:47:46 Build Failed. 2 errors, 1 warnings. (took 384ms)
+

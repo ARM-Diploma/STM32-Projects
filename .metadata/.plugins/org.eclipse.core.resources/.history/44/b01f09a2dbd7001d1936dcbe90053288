@@ -1,0 +1,13 @@
+#include "stdint.h"
+#include "stm32f4xx_hal_tim.h"
+
+#include "PWM.h"
+#include "servo.h"
+#include "MAPPING.h"
+
+void Servo_int_8_SetAngle(SERVO_t *Copy_ServoMotor,int32_t Copy_int32_Angle)
+{
+
+	PWM_int32SetPWMValue(Copy_ServoMotor->htim, Copy_ServoMotor->Copy_int32Channel, Copy_int32_Angle);
+}
+

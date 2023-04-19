@@ -1,0 +1,31 @@
+00:32:19 **** Incremental Build of configuration Debug for project Test_GP ****
+make -j4 all 
+arm-none-eabi-gcc "../Inc/1-MCAL/9.TWI/TWI_program.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Inc/1-MCAL/9.TWI/TWI_program.d" -MT"Inc/1-MCAL/9.TWI/TWI_program.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/1-MCAL/9.TWI/TWI_program.o"
+arm-none-eabi-gcc "../Inc/1-MCAL/7.USART/USART_program.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Inc/1-MCAL/7.USART/USART_program.d" -MT"Inc/1-MCAL/7.USART/USART_program.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/1-MCAL/7.USART/USART_program.o"
+arm-none-eabi-gcc "../Inc/1-MCAL/6.Timers/TIMER_program.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Inc/1-MCAL/6.Timers/TIMER_program.d" -MT"Inc/1-MCAL/6.Timers/TIMER_program.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/1-MCAL/6.Timers/TIMER_program.o"
+arm-none-eabi-gcc "../Inc/1-MCAL/5.ADC/ADC_program.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Inc/1-MCAL/5.ADC/ADC_program.d" -MT"Inc/1-MCAL/5.ADC/ADC_program.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Inc/1-MCAL/5.ADC/ADC_program.o"
+../Inc/1-MCAL/9.TWI/TWI_program.c:1:10: fatal error: STD_TYPES.h: No such file or directory
+    1 | #include "STD_TYPES.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+make: *** [Inc/1-MCAL/9.TWI/subdir.mk:19: Inc/1-MCAL/9.TWI/TWI_program.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Inc/1-MCAL/7.USART/USART_program.c:1:10: fatal error: BIT_MATH.h: No such file or directory
+    1 | #include "BIT_MATH.h"
+      |          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [Inc/1-MCAL/7.USART/subdir.mk:19: Inc/1-MCAL/7.USART/USART_program.o] Error 1
+../Inc/1-MCAL/6.Timers/TIMER_program.c:11:10: fatal error: STD_TYPES.h: No such file or directory
+   11 | #include "STD_TYPES.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+make: *** [Inc/1-MCAL/6.Timers/subdir.mk:19: Inc/1-MCAL/6.Timers/TIMER_program.o] Error 1
+../Inc/1-MCAL/5.ADC/ADC_program.c:10:10: fatal error: STD_TYPES.h: No such file or directory
+   10 | #include "STD_TYPES.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+make: *** [Inc/1-MCAL/5.ADC/subdir.mk:19: Inc/1-MCAL/5.ADC/ADC_program.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+00:32:20 Build Failed. 9 errors, 0 warnings. (took 890ms)
+

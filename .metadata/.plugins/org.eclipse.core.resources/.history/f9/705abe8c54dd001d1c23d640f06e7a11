@@ -1,0 +1,16 @@
+#ifndef RRC_H_
+#define RRC_H_
+
+
+/*ClockTpye :
+ * 1. HSE_CLK
+ * 2. HSI_CLK
+ * 3. PLL_CLK
+ *
+ * Status :
+ * 1. ON
+ * 2. OFF
+ * */
+int8_t RCC_Int8SetClockSrc(int8_t Copy_int8ClockType , int8_t Copy_int8Status);
+
+#endif

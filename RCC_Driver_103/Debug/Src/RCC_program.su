@@ -1,0 +1,5 @@
+../Src/RCC_program.c:10:8:RCC_Int8SetClockSrc	24	static
+../Src/RCC_program.c:114:8:RCC_Int8SetSysClock	24	static
+../Src/RCC_program.c:139:8:RCC_Int8HSEConfig	24	static
+../Src/RCC_program.c:164:8:RCC_Int8PLLConfig	24	static
+../Src/RCC_program.c:193:8:RCC_Int8PeripheralClkControl	16	static

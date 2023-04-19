@@ -1,0 +1,31 @@
+#ifndef RCC_CONFIG_H_
+#define RCC_CONFIG_H_
+
+#define HSE_CLK			1
+#define HSI_CLK			2
+#define PLL_CLK			3
+
+
+#define ON				1
+#define OFF				2
+
+#define DEV_BY_1		1
+#define DEV_BY_2		2
+
+#define MUL_2			1
+#define MUL_3			2
+#define MUL_4			3
+#define MUL_5			4
+#define MUL_6			5
+#define MUL_7			6
+#define MUL_8			7
+#define MUL_9			8
+#define MUL_10			9
+#define MUL_11			10
+#define MUL_12			11
+#define MUL_13			12
+#define MUL_14			13
+#define MUL_15			14
+#define MUL_16			15
+
+#endif

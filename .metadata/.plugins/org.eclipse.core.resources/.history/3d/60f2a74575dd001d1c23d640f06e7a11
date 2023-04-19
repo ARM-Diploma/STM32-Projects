@@ -1,0 +1,28 @@
+#include "../Inc/RRC.h"
+
+int8_t RCC_Int8SetClockSrc(int8_t Copy_int8ClockType , int8_t Copy_int8Status)
+{
+
+}
+
+int8_t RCC_Int8SetSysClock(int8_t Copy_int8ClockType)
+{
+
+}
+
+
+int8_t RCC_Int8HSEConfig(int8_t Copy_int8DivisionScale)
+{
+
+}
+
+
+int8_t RCC_Int8PLLConfig(int8_t Copy_int8PLLMul , int8_t Copy_int8PLLSrc)
+{
+
+}
+
+int8_t RCC_Int8PeripheralClkControl(int8_t Copy_int8PeripheralClk , int8_t Copy_int8PeripheralName)
+{
+
+}

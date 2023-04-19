@@ -1,0 +1,19 @@
+06:47:20 **** Incremental Build of configuration Debug for project Session9_f103_firstproject ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "Session9_f103_firstproject.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\Embedded ARM\STM32 Projects\Session9_f103_firstproject\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Session9_f103_firstproject.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Session9_f103_firstproject.elf
+ 
+arm-none-eabi-size   Session9_f103_firstproject.elf 
+arm-none-eabi-objdump -h -S  Session9_f103_firstproject.elf  > "Session9_f103_firstproject.list"
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	Session9_f103_firstproject.elf
+Finished building: default.size.stdout
+ 
+Finished building: Session9_f103_firstproject.list
+ 
+
+06:47:21 Build Finished. 0 errors, 0 warnings. (took 1s.406ms)
+

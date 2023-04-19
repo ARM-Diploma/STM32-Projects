@@ -1,0 +1,35 @@
+#ifndef RCC_PRIVATE_H_
+#define RCC_PRIVATE_H_
+
+#define READY			1
+#define NOT_READY		2
+
+#define RCC_BASE_ADDRESS		(int32_t)0x40021000
+typedef struct
+{
+	int32_t CR;
+	int32_t CFGR;
+	int32_t CIR;
+	int32_t APB2RSTR;
+	int32_t APB1RSTR;
+	int32_t AHBENR;
+	int32_t APB2ENR;
+	int32_t APB1ENR;
+	int32_t BDCR;
+	int32_t CSR;
+
+}RCC_T;
+
+#define RCC				((volatile RCC_T*)RCC_BASE_ADDRESS)
+
+		/*********	CR register bits	*********/
+#define HSION			0
+#define HSIRDY			1
+
+#define HSEON			16
+#define HSERDY			17
+
+#define PLLON			24
+#define PLLRDY			25
+
+#endif

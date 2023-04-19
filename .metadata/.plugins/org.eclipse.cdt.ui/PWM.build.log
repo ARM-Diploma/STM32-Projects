@@ -1,0 +1,50 @@
+06:06:26 **** Build of configuration Debug for project PWM ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/Mapping.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/Mapping.d" -MT"Src/Mapping.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/Mapping.o"
+arm-none-eabi-gcc "../Src/PWM.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/PWM.d" -MT"Src/PWM.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/PWM.o"
+arm-none-eabi-gcc "../Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/gpio.d" -MT"Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/gpio.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/servo.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/servo.d" -MT"Src/servo.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/servo.o"
+../Src/main.c: In function 'main':
+../Src/main.c:61:4: warning: implicit declaration of function 'HAL_ADC_Start'; did you mean 'HAL_DMA_Start'? [-Wimplicit-function-declaration]
+   61 |    HAL_ADC_Start(&hadc1);
+      |    ^~~~~~~~~~~~~
+      |    HAL_DMA_Start
+../Src/main.c:61:19: error: 'hadc1' undeclared (first use in this function)
+   61 |    HAL_ADC_Start(&hadc1);
+      |                   ^~~~~
+../Src/main.c:61:19: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:62:4: warning: implicit declaration of function 'HAL_ADC_PollForConversion' [-Wimplicit-function-declaration]
+   62 |    HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:63:10: warning: implicit declaration of function 'HAL_ADC_GetValue' [-Wimplicit-function-declaration]
+   63 |    raw = HAL_ADC_GetValue(&hadc1);
+      |          ^~~~~~~~~~~~~~~~
+../Src/main.c:66:4: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   66 |    sprintf(msg, "%hu\r\n", raw);
+      |    ^~~~~~~
+../Src/main.c:66:4: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Src/main.c:6:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+    5 | #include "MAPPING.h"
+  +++ |+#include <stdio.h>
+    6 | 
+../Src/main.c:67:4: warning: implicit declaration of function 'HAL_UART_Transmit' [-Wimplicit-function-declaration]
+   67 |    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+      |    ^~~~~~~~~~~~~~~~~
+../Src/main.c:67:23: error: 'huart2' undeclared (first use in this function)
+   67 |    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+      |                       ^~~~~~
+../Src/main.c:67:46: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   67 |    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+      |                                              ^~~~~~
+../Src/main.c:67:46: warning: incompatible implicit declaration of built-in function 'strlen'
+../Src/main.c:6:1: note: include '<string.h>' or provide a declaration of 'strlen'
+    5 | #include "MAPPING.h"
+  +++ |+#include <string.h>
+    6 | 
+make: *** [Src/subdir.mk:94: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+06:06:27 Build Failed. 4 errors, 8 warnings. (took 1s.301ms)
+

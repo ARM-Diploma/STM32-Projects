@@ -1,0 +1,13 @@
+#include "stdint.h"
+#include "stm32f4xx_hal_tim.h"
+
+
+#include "servo.h"
+
+int8_t Servo_int_8_SetAngle(SERVO_t *Copy_ServoMotor,int32_t Copy_int32Value)
+{
+	int8_t Local_int_8_ErrorState = 0;
+
+	return Local_int_8_ErrorState;
+}
+

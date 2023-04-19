@@ -1,0 +1,17 @@
+02:42:18 **** Incremental Build of configuration Debug for project RCC_Driver_103 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "RCC_Driver_103.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\Embedded ARM\STM32 Projects\RCC_Driver_103\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RCC_Driver_103.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: RCC_Driver_103.elf
+ 
+arm-none-eabi-size   RCC_Driver_103.elf 
+arm-none-eabi-objdump -h -S  RCC_Driver_103.elf  > "RCC_Driver_103.list"
+   text	   data	    bss	    dec	    hex	filename
+   1036	      8	   1568	   2612	    a34	RCC_Driver_103.elf
+Finished building: default.size.stdout
+ 
+Finished building: RCC_Driver_103.list
+ 
+
+02:42:19 Build Finished. 0 errors, 0 warnings. (took 706ms)
+
