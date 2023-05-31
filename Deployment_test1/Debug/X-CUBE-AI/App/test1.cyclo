@@ -1,0 +1,11 @@
+test1.c:612:9:ai_test1_get_info	4
+test1.c:658:9:ai_test1_get_report	4
+test1.c:704:10:ai_test1_get_error	1
+test1.c:710:10:ai_test1_create	1
+test1.c:754:12:ai_test1_inputs_get	2
+test1.c:764:12:ai_test1_outputs_get	2
+test1.c:774:11:ai_test1_destroy	1
+test1.c:780:9:ai_test1_init	4
+test1.c:720:10:ai_test1_create_and_init	8
+test1.c:797:8:ai_test1_run	1
+test1.c:804:8:ai_test1_forward	1

@@ -1,0 +1,165 @@
+20:15:30 **** Incremental Build of configuration Debug for project deployment_1 ****
+make -j4 all 
+arm-none-eabi-gcc "../X-CUBE-AI/App/aiTestHelper.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../X-CUBE-AI/App -I../X-CUBE-AI -I../X-CUBE-AI/Target -I../Middlewares/ST/AI/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"X-CUBE-AI/App/aiTestHelper.d" -MT"X-CUBE-AI/App/aiTestHelper.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "X-CUBE-AI/App/aiTestHelper.o"
+arm-none-eabi-gcc "../X-CUBE-AI/App/aiValidation.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../X-CUBE-AI/App -I../X-CUBE-AI -I../X-CUBE-AI/Target -I../Middlewares/ST/AI/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"X-CUBE-AI/App/aiValidation.d" -MT"X-CUBE-AI/App/aiValidation.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "X-CUBE-AI/App/aiValidation.o"
+arm-none-eabi-gcc "../X-CUBE-AI/App/app_x-cube-ai.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../X-CUBE-AI/App -I../X-CUBE-AI -I../X-CUBE-AI/Target -I../Middlewares/ST/AI/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"X-CUBE-AI/App/app_x-cube-ai.d" -MT"X-CUBE-AI/App/app_x-cube-ai.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "X-CUBE-AI/App/app_x-cube-ai.o"
+arm-none-eabi-gcc "../X-CUBE-AI/App/lc_print.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../X-CUBE-AI/App -I../X-CUBE-AI -I../X-CUBE-AI/Target -I../Middlewares/ST/AI/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"X-CUBE-AI/App/lc_print.d" -MT"X-CUBE-AI/App/lc_print.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "X-CUBE-AI/App/lc_print.o"
+In file included from ../X-CUBE-AI/App/test1.h:24,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.h:28,
+                 from ../X-CUBE-AI/App/../Target/bsp_ai.h:26,
+                 from ../X-CUBE-AI/App/aiTestHelper.h:27,
+                 from ../X-CUBE-AI/App/aiTestHelper.c:35:
+../X-CUBE-AI/App/ai_platform.h:28: warning: "AI_PLATFORM_API_MAJOR" redefined
+   28 | #define AI_PLATFORM_API_MAJOR           1
+      | 
+In file included from ../X-CUBE-AI/App/test1.h:23,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.h:28,
+                 from ../X-CUBE-AI/App/../Target/bsp_ai.h:26,
+                 from ../X-CUBE-AI/App/aiTestHelper.h:27,
+                 from ../X-CUBE-AI/App/aiTestHelper.c:35:
+../X-CUBE-AI/App/test1_config.h:36: note: this is the location of the previous definition
+   36 | #define AI_PLATFORM_API_MAJOR       (1)
+      | 
+In file included from ../X-CUBE-AI/App/test1.h:24,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.h:28,
+                 from ../X-CUBE-AI/App/../Target/bsp_ai.h:26,
+                 from ../X-CUBE-AI/App/aiTestHelper.h:27,
+                 from ../X-CUBE-AI/App/aiTestHelper.c:35:
+../X-CUBE-AI/App/ai_platform.h:29: warning: "AI_PLATFORM_API_MINOR" redefined
+   29 | #define AI_PLATFORM_API_MINOR           0
+      | 
+In file included from ../X-CUBE-AI/App/test1.h:23,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.h:28,
+                 from ../X-CUBE-AI/App/../Target/bsp_ai.h:26,
+                 from ../X-CUBE-AI/App/aiTestHelper.h:27,
+                 from ../X-CUBE-AI/App/aiTestHelper.c:35:
+../X-CUBE-AI/App/test1_config.h:37: note: this is the location of the previous definition
+   37 | #define AI_PLATFORM_API_MINOR       (1)
+      | 
+In file included from ../X-CUBE-AI/App/test1.h:24,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.h:28,
+                 from ../X-CUBE-AI/App/../Target/bsp_ai.h:26,
+                 from ../X-CUBE-AI/App/aiTestHelper.h:27,
+                 from ../X-CUBE-AI/App/aiTestHelper.c:35:
+../X-CUBE-AI/App/ai_platform.h:30: warning: "AI_PLATFORM_API_MICRO" redefined
+   30 | #define AI_PLATFORM_API_MICRO           0
+      | 
+In file included from ../X-CUBE-AI/App/test1.h:23,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.h:28,
+                 from ../X-CUBE-AI/App/../Target/bsp_ai.h:26,
+                 from ../X-CUBE-AI/App/aiTestHelper.h:27,
+                 from ../X-CUBE-AI/App/aiTestHelper.c:35:
+../X-CUBE-AI/App/test1_config.h:38: note: this is the location of the previous definition
+   38 | #define AI_PLATFORM_API_MICRO       (0)
+      | 
+In file included from ../X-CUBE-AI/App/aiTestHelper.c:38:
+../X-CUBE-AI/App/ai_platform_interface.h:27:10: fatal error: datatypes_network.h: No such file or directory
+   27 | #include "datatypes_network.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [X-CUBE-AI/App/subdir.mk:64: X-CUBE-AI/App/aiTestHelper.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../X-CUBE-AI/App/test1.h:24,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.h:28,
+                 from ../X-CUBE-AI/Target/bsp_ai.h:26,
+                 from ../X-CUBE-AI/App/ai_stm32_adaptor.h:212,
+                 from ../X-CUBE-AI/App/aiTestUtility.h:28,
+                 from ../X-CUBE-AI/App/aiValidation.c:95:
+../X-CUBE-AI/App/ai_platform.h:28: warning: "AI_PLATFORM_API_MAJOR" redefined
+   28 | #define AI_PLATFORM_API_MAJOR           1
+      | 
+In file included from ../X-CUBE-AI/App/test1.h:23,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.h:28,
+                 from ../X-CUBE-AI/Target/bsp_ai.h:26,
+                 from ../X-CUBE-AI/App/ai_stm32_adaptor.h:212,
+                 from ../X-CUBE-AI/App/aiTestUtility.h:28,
+                 from ../X-CUBE-AI/App/aiValidation.c:95:
+../X-CUBE-AI/App/test1_config.h:36: note: this is the location of the previous definition
+   36 | #define AI_PLATFORM_API_MAJOR       (1)
+      | 
+In file included from ../X-CUBE-AI/App/test1.h:24,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.h:28,
+                 from ../X-CUBE-AI/Target/bsp_ai.h:26,
+                 from ../X-CUBE-AI/App/ai_stm32_adaptor.h:212,
+                 from ../X-CUBE-AI/App/aiTestUtility.h:28,
+                 from ../X-CUBE-AI/App/aiValidation.c:95:
+../X-CUBE-AI/App/ai_platform.h:29: warning: "AI_PLATFORM_API_MINOR" redefined
+   29 | #define AI_PLATFORM_API_MINOR           0
+      | 
+In file included from ../X-CUBE-AI/App/test1.h:23,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.h:28,
+                 from ../X-CUBE-AI/Target/bsp_ai.h:26,
+                 from ../X-CUBE-AI/App/ai_stm32_adaptor.h:212,
+                 from ../X-CUBE-AI/App/aiTestUtility.h:28,
+                 from ../X-CUBE-AI/App/aiValidation.c:95:
+../X-CUBE-AI/App/test1_config.h:37: note: this is the location of the previous definition
+   37 | #define AI_PLATFORM_API_MINOR       (1)
+      | 
+In file included from ../X-CUBE-AI/App/test1.h:24,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.h:28,
+                 from ../X-CUBE-AI/Target/bsp_ai.h:26,
+                 from ../X-CUBE-AI/App/ai_stm32_adaptor.h:212,
+                 from ../X-CUBE-AI/App/aiTestUtility.h:28,
+                 from ../X-CUBE-AI/App/aiValidation.c:95:
+../X-CUBE-AI/App/ai_platform.h:30: warning: "AI_PLATFORM_API_MICRO" redefined
+   30 | #define AI_PLATFORM_API_MICRO           0
+      | 
+In file included from ../X-CUBE-AI/App/test1.h:23,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.h:28,
+                 from ../X-CUBE-AI/Target/bsp_ai.h:26,
+                 from ../X-CUBE-AI/App/ai_stm32_adaptor.h:212,
+                 from ../X-CUBE-AI/App/aiTestUtility.h:28,
+                 from ../X-CUBE-AI/App/aiValidation.c:95:
+../X-CUBE-AI/App/test1_config.h:38: note: this is the location of the previous definition
+   38 | #define AI_PLATFORM_API_MICRO       (0)
+      | 
+In file included from ../X-CUBE-AI/App/test1.h:24,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.h:28,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.c:37:
+../X-CUBE-AI/App/ai_platform.h:28: warning: "AI_PLATFORM_API_MAJOR" redefined
+   28 | #define AI_PLATFORM_API_MAJOR           1
+      | 
+In file included from ../X-CUBE-AI/App/test1.h:23,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.h:28,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.c:37:
+../X-CUBE-AI/App/test1_config.h:36: note: this is the location of the previous definition
+   36 | #define AI_PLATFORM_API_MAJOR       (1)
+      | 
+In file included from ../X-CUBE-AI/App/test1.h:24,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.h:28,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.c:37:
+../X-CUBE-AI/App/ai_platform.h:29: warning: "AI_PLATFORM_API_MINOR" redefined
+   29 | #define AI_PLATFORM_API_MINOR           0
+      | 
+In file included from ../X-CUBE-AI/App/test1.h:23,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.h:28,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.c:37:
+../X-CUBE-AI/App/test1_config.h:37: note: this is the location of the previous definition
+   37 | #define AI_PLATFORM_API_MINOR       (1)
+      | 
+In file included from ../X-CUBE-AI/App/test1.h:24,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.h:28,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.c:37:
+../X-CUBE-AI/App/ai_platform.h:30: warning: "AI_PLATFORM_API_MICRO" redefined
+   30 | #define AI_PLATFORM_API_MICRO           0
+      | 
+In file included from ../X-CUBE-AI/App/test1.h:23,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.h:28,
+                 from ../X-CUBE-AI/App/app_x-cube-ai.c:37:
+../X-CUBE-AI/App/test1_config.h:38: note: this is the location of the previous definition
+   38 | #define AI_PLATFORM_API_MICRO       (0)
+      | 
+../X-CUBE-AI/App/aiValidation.c:106:10: fatal error: core_datatypes.h: No such file or directory
+  106 | #include <core_datatypes.h>   /* AI_PLATFORM_RUNTIME_xxx definition */
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+../X-CUBE-AI/App/app_x-cube-ai.c:40:10: fatal error: ai_datatypes_defines.h: No such file or directory
+   40 | #include "ai_datatypes_defines.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [X-CUBE-AI/App/subdir.mk:64: X-CUBE-AI/App/aiValidation.o] Error 1
+make: *** [X-CUBE-AI/App/subdir.mk:64: X-CUBE-AI/App/app_x-cube-ai.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+20:15:35 Build Failed. 7 errors, 9 warnings. (took 5s.207ms)
+

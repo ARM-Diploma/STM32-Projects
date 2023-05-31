@@ -1,0 +1,7 @@
+../Src/FEAT_EXT.c:7:10:FEAT_EXT_u32_SlopeSignChange	48	dynamic
+../Src/FEAT_EXT.c:43:10:FEAT_EXT_u32_ZeroCrossing	48	dynamic
+../Src/FEAT_EXT.c:76:10:FEAT_EXT_u32_WaveformLength	48	dynamic
+../Src/FEAT_EXT.c:109:7:FEAT_EXT_f32_RMS	24	static
+../Src/FEAT_EXT.c:118:7:FEAT_EXT_f32_Variance	40	static
+../Src/FEAT_EXT.c:139:7:FEAT_EXT_f32_Mean	24	static
+../Src/FEAT_EXT.c:154:7:FEAT_EXT_f32_MeanAbsolute	24	static

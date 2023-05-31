@@ -1,0 +1,57 @@
+#include <float.h>
+#include <stdint.h>
+
+#include "NORM_interface.h"
+#include "NORM_private.h"
+
+
+float NORM_f32_SlopeSignChange(uint8_t Copy_u8SensorNum , uint32_t Copy_u32SSC)
+{
+	float Local_f32_NormSSC;
+
+	switch(Copy_u8SensorNum)
+	{
+	case SNS1 : Local_f32_NormSSC = (Copy_u32SSC - SNS1_SSC_MEAN) / SNS1_SSC_SD; break;
+	case SNS2 : Local_f32_NormSSC = (Copy_u32SSC - SNS2_SSC_MEAN) / SNS2_SSC_SD; break;
+	case SNS3 : Local_f32_NormSSC = (Copy_u32SSC - SNS3_SSC_MEAN) / SNS3_SSC_SD; break;
+	}
+
+	return Local_f32_NormZC;;
+
+}
+
+float NORM_f32_ZeroCrossing(uint8_t Copy_u8SensorNum , uint32_t Copy_u32zeroCross)
+{
+	float Local_f32_NormZC;;
+
+	switch(Copy_u8SensorNum)
+	{
+	case SNS1 : Local_f32_NormZC = (Copy_u32zeroCross - SNS1_ZC_MEAN) / SNS1_ZC_SD; break;
+	case SNS2 : Local_f32_NormZC = (Copy_u32zeroCross - SNS2_ZC_MEAN) / SNS2_ZC_SD; break;
+	case SNS3 : Local_f32_NormZC = (Copy_u32zeroCross - SNS3_ZC_MEAN) / SNS3_ZC_SD; break;
+	}
+
+	return Local_f32_NormZC;;
+}
+
+float NORM_f32_WaveformLength(uint8_t Copy_u8SensorNum , uint32_t Copy_u3WaveLength)
+{
+	float Local_f32_NormWVL;
+
+	switch(Copy_u8SensorNum)
+	{
+	case SNS1 : Local_f32_NormWVL = (Copy_u32SSC - SNS1_WVL_MEAN) / SNS1_WVL_SD; break;
+	case SNS2 : Local_f32_NormWVL = (Copy_u32SSC - SNS2_WVL_MEAN) / SNS2_WVL_SD; break;
+	case SNS3 : Local_f32_NormWVL = (Copy_u32SSC - SNS3_WVL_MEAN) / SNS3_WVL_SD; break;
+	}
+
+	return Local_f32_NormWVL;
+}
+float NORM_f32_RMS(uint8_t Copy_u8SensorNum , float Copy_u32RMS);
+
+float NORM_f32_Variance(uint8_t Copy_u8SensorNum , float Copy_u32Variance);
+
+float NORM_f32_Mean(uint8_t Copy_u8SensorNum , float Copy_u32Mean);
+
+
+

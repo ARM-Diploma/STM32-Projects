@@ -1,0 +1,4 @@
+aiTestHelper.c:41:6:aiPlatformVersion	1
+aiTestHelper.c:54:6:aiLogErr	2
+aiTestHelper.c:77:6:aiPrintBufferInfo	23
+aiTestHelper.c:142:6:aiPrintNetworkInfo	6

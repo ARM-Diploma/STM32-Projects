@@ -1,5 +1,7 @@
-../Src/RCC_program.c:10:8:RCC_Int8SetClockSrc	24	static
-../Src/RCC_program.c:114:8:RCC_Int8SetSysClock	24	static
-../Src/RCC_program.c:139:8:RCC_Int8HSEConfig	24	static
-../Src/RCC_program.c:164:8:RCC_Int8PLLConfig	24	static
-../Src/RCC_program.c:193:8:RCC_Int8PeripheralClkControl	16	static
+../Src/RCC_program.c:10:9:RCC_u8SetClockSrc	24	static
+../Src/RCC_program.c:119:9:RCC_u8SetSysClock	24	static
+../Src/RCC_program.c:150:9:RCC_u8HSEConfig	24	static
+../Src/RCC_program.c:175:9:RCC_u8PLLConfig	24	static
+../Src/RCC_program.c:204:9:RCC_u8PeripheralClkEnable	24	static
+../Src/RCC_program.c:219:9:RCC_u8PeripheralClkDisable	24	static
+../Src/RCC_program.c:233:9:RCC_u8GetSysClk	16	static

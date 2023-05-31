@@ -1,0 +1,25 @@
+15:29:42 **** Incremental Build of configuration Debug for project Session15_Stack ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:39:6: warning: variable 'result' set but not used [-Wunused-but-set-variable]
+   39 |  int result;
+      |      ^~~~~~
+../Src/main.c: In function 'SVC_Handler':
+../Src/main.c:55:6: warning: unused variable 'x' [-Wunused-variable]
+   55 |  int x=0;
+      |      ^
+arm-none-eabi-gcc -o "Session15_Stack.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\Embedded ARM\STM32 Projects\Session15_Stack\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Session15_Stack.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Session15_Stack.elf
+ 
+arm-none-eabi-size   Session15_Stack.elf 
+arm-none-eabi-objdump -h -S  Session15_Stack.elf  > "Session15_Stack.list"
+   text	   data	    bss	    dec	    hex	filename
+    824	      8	   1568	   2400	    960	Session15_Stack.elf
+Finished building: default.size.stdout
+Finished building: Session15_Stack.list
+ 
+ 
+
+15:29:43 Build Finished. 0 errors, 2 warnings. (took 1s.218ms)
+

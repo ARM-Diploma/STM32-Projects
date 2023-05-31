@@ -1,0 +1,12 @@
+#ifndef SYSTIC_PRIVATE_H_
+#define SYSTIC_PRIVATE_H_
+
+#define SYST_CLKSRC_SHIFT		2U
+#define SYST_CLKSRC_MASK		1U
+
+
+#define SYST_PRELOAD_MASK		0x00FFFF
+
+#define SYST_ENABLE_MASK		1U
+
+#endif

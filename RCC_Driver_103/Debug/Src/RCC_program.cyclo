@@ -1,5 +1,7 @@
-RCC_program.c:10:8:RCC_Int8SetClockSrc	20
-RCC_program.c:114:8:RCC_Int8SetSysClock	5
-RCC_program.c:139:8:RCC_Int8HSEConfig	3
-RCC_program.c:164:8:RCC_Int8PLLConfig	3
-RCC_program.c:193:8:RCC_Int8PeripheralClkControl	1
+RCC_program.c:10:9:RCC_u8SetClockSrc	20
+RCC_program.c:119:9:RCC_u8SetSysClock	5
+RCC_program.c:150:9:RCC_u8HSEConfig	3
+RCC_program.c:175:9:RCC_u8PLLConfig	3
+RCC_program.c:204:9:RCC_u8PeripheralClkEnable	5
+RCC_program.c:219:9:RCC_u8PeripheralClkDisable	5
+RCC_program.c:233:9:RCC_u8GetSysClk	7

@@ -1,0 +1,134 @@
+Neural Network Tools for STM32AI v1.7.0 (STM.ai v8.0.0-19389)
+Created date          : 2023-05-10 04:29:16
+Parameters            : generate --name test3 -m F:/Graduation Project/model.tflite --type tflite --compression none --verbosity 1 --workspace C:\Users\HANINA~1\AppData\Local\Temp\mxAI_workspace196209568517600997601839040389302 --output C:\Users\Hanin Anwar\.stm32cubemx\test3_output --allocate-inputs --series stm32f4 --allocate-outputs
+
+Exec/report summary (generate)
+--------------------------------------------------------------------------------------------------------------
+model file         :   F:\Graduation Project\model.tflite                                                     
+type               :   tflite                                                                                 
+c_name             :   test3                                                                                  
+compression        :   none                                                                                   
+options            :   allocate-inputs, allocate-outputs                                                      
+optimization       :   balanced                                                                               
+target/series      :   stm32f4                                                                                
+workspace dir      :   C:\Users\HANINA~1\AppData\Local\Temp\mxAI_workspace196209568517600997601839040389302   
+output dir         :   C:\Users\Hanin Anwar\.stm32cubemx\test3_output                                         
+model_fmt          :   float                                                                                  
+model_name         :   model                                                                                  
+model_hash         :   2aea94e71d415d50116540a15613874f                                                       
+params #           :   3,201 items (5.47 KiB)                                                                 
+--------------------------------------------------------------------------------------------------------------
+input 1/1          :   'serving_default_L1_input0' (domain:activations/**default**)                           
+                   :   6 items, 24 B, ai_float, float, (1,1,1,6)                                              
+output 1/1         :   'nl_2' (domain:activations/**default**)                                                
+                   :   1 items, 4 B, ai_float, float, (1,1,1,1)                                               
+macc               :   3,611                                                                                  
+weights (ro)       :   12,804 B (12.50 KiB) (1 segment)                                                       
+activations (rw)   :   1,624 B (1.59 KiB) (1 segment) *                                                       
+ram (total)        :   1,624 B (1.59 KiB) = 1,624 + 0 + 0                                                     
+--------------------------------------------------------------------------------------------------------------
+(*) 'input'/'output' buffers can be used from the activations buffer
+
+Model name - model ['serving_default_L1_input0'] ['nl_2']
+------ ----------------------------------------- ------------- ------------- ------- --------------------------- --- ------------------ ----------------- -------------------------- 
+m_id   layer (type,original)                     oshape        param/size       macc                connected to   | c_size             c_macc            c_type                     
+------ ----------------------------------------- ------------- ------------- ------- --------------------------- --- ------------------ ----------------- -------------------------- 
+0      serving_default_L1_input0 (Input, )       [b:1,c:6]                                                         | +11,200(+100.0%)   +3,200(+100.0%)   dense_of32/nl_of32[0, 1]   
+       dense_0 (Dense, FULLY_CONNECTED)          [b:1,c:400]   2,800/4,000     2,800   serving_default_L1_input0   | -4,000(-100.0%)    -2,800(-100.0%)   
+       nl_0_nl (Nonlinearity, FULLY_CONNECTED)   [b:1,c:400]                     400                     dense_0   |                    -400(-100.0%)     
+------ ----------------------------------------- ------------- ------------- ------- --------------------------- --- ------------------ ----------------- -------------------------- 
+1      dense_1 (Dense, FULLY_CONNECTED)          [b:1,c:1]     401/1,604         401                     nl_0_nl   |                                      dense_of32[2]              
+------ ----------------------------------------- ------------- ------------- ------- --------------------------- --- ------------------ ----------------- -------------------------- 
+2      nl_2 (Nonlinearity, LOGISTIC)             [b:1,c:1]                        10                     dense_1   |                                      nl_of32[o][3]              
+------ ----------------------------------------- ------------- ------------- ------- --------------------------- --- ------------------ ----------------- -------------------------- 
+model/c-model: macc=3,611/3,611  weights=5,604/12,804 +7,200(+128.5%) activations=--/1,624 io=--/0
+
+
+
+Generated C-graph summary
+------------------------------------------------------------------------------------------------------------------------
+model name            : model
+c-name                : test3
+c-node #              : 4
+c-array #             : 9
+activations size      : 1624 (1 segment)
+weights size          : 12804 (1 segment)
+macc                  : 3611
+inputs                : ['serving_default_L1_input0_output']
+outputs               : ['nl_2_output']
+
+C-Arrays (9)
+------ ---------------------------------- ----------- ------------------------- ------------- --------- --------- 
+c_id   name (*_array)                     item/size   domain/mem-pool           c-type        fmt       comment   
+------ ---------------------------------- ----------- ------------------------- ------------- --------- --------- 
+0      dense_0_output                     400/1600    activations/**default**   float         float32             
+1      nl_0_nl_output                     400/1600    activations/**default**   float         float32             
+2      dense_1_output                     1/4         activations/**default**   float         float32             
+3      nl_2_output                        1/4         activations/**default**   float         float32   /output   
+4      dense_0_weights                    2400/9600   weights/weights           const float   float32             
+5      dense_0_bias                       400/1600    weights/weights           const float   float32             
+6      dense_1_weights                    400/1600    weights/weights           const float   float32             
+7      dense_1_bias                       1/4         weights/weights           const float   float32             
+8      serving_default_L1_input0_output   6/24        activations/**default**   float         float32   /input    
+------ ---------------------------------- ----------- ------------------------- ------------- --------- --------- 
+
+C-Layers (4)
+------ ---------------- ---- ------------ ------ ------- ------------------------------------- ------------------ 
+c_id   name (*_layer)   id   layer_type   macc   rom     tensors                               shape (array id)   
+------ ---------------- ---- ------------ ------ ------- ------------------------------------- ------------------ 
+0      dense_0          0    dense        2800   11200   I: serving_default_L1_input0_output   (1,1,1,6) (8)      
+                                                         W: dense_0_weights                    (6,1,1,400) (4)    
+                                                         W: dense_0_bias                       (1,1,1,400) (5)    
+                                                         O: dense_0_output                     (1,1,1,400) (0)    
+------ ---------------- ---- ------------ ------ ------- ------------------------------------- ------------------ 
+1      nl_0_nl          0    nl           400    0       I: dense_0_output                     (1,1,1,400) (0)    
+                                                         O: nl_0_nl_output                     (1,1,1,400) (1)    
+------ ---------------- ---- ------------ ------ ------- ------------------------------------- ------------------ 
+2      dense_1          1    dense        401    1604    I: nl_0_nl_output                     (1,1,1,400) (1)    
+                                                         W: dense_1_weights                    (400,1,1,1) (6)    
+                                                         W: dense_1_bias                       (1,1,1,1) (7)      
+                                                         O: dense_1_output                     (1,1,1,1) (2)      
+------ ---------------- ---- ------------ ------ ------- ------------------------------------- ------------------ 
+3      nl_2             2    nl           10     0       I: dense_1_output                     (1,1,1,1) (2)      
+                                                         O: nl_2_output                        (1,1,1,1) (3)      
+------ ---------------- ---- ------------ ------ ------- ------------------------------------- ------------------ 
+
+
+
+Number of operations per c-layer
+------- ------ ----------------- ------- -------------- -------- ---------- 
+c_id    m_id   name (type)           #op           type   #param   sparsity 
+------- ------ ----------------- ------- -------------- -------- ---------- 
+0       0      dense_0 (dense)     2,800   smul_f32_f32    2,800     0.0075 
+1       0      nl_0_nl (nl)          400     op_f32_f32          
+2       1      dense_1 (dense)       401   smul_f32_f32      401     0.0000 
+3       2      nl_2 (nl)              10     op_f32_f32          
+------- ------ ----------------- ------- -------------- -------- ---------- 
+total                              3,611                   3,201     0.0066 
+
+Number of operation types
+---------------- ------- ----------- 
+operation type         #           % 
+---------------- ------- ----------- 
+smul_f32_f32       3,201       88.6% 
+op_f32_f32           410       11.4% 
+
+Complexity report (model)
+------ --------------------------- ------------------------- ------------------------- -------- 
+m_id   name                        c_macc                    c_rom                     c_id     
+------ --------------------------- ------------------------- ------------------------- -------- 
+0      serving_default_L1_input0   ||||||||||||||||  88.6%   ||||||||||||||||  87.5%   [0, 1]   
+1      dense_1                     ||                11.1%   |||               12.5%   [2]      
+2      nl_2                        |                  0.3%   |                  0.0%   [3]      
+------ --------------------------- ------------------------- ------------------------- -------- 
+macc=3,611 weights=12,804 act=1,624 ram_io=0
+
+Generated files (7)
+-------------------------------------------------------------------- 
+C:\Users\Hanin Anwar\.stm32cubemx\test3_output\test3_config.h        
+C:\Users\Hanin Anwar\.stm32cubemx\test3_output\test3.h               
+C:\Users\Hanin Anwar\.stm32cubemx\test3_output\test3.c               
+C:\Users\Hanin Anwar\.stm32cubemx\test3_output\test3_data_params.h   
+C:\Users\Hanin Anwar\.stm32cubemx\test3_output\test3_data_params.c   
+C:\Users\Hanin Anwar\.stm32cubemx\test3_output\test3_data.h          
+C:\Users\Hanin Anwar\.stm32cubemx\test3_output\test3_data.c          

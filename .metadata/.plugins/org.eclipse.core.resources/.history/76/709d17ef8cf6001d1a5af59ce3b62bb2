@@ -1,0 +1,18 @@
+#ifndef NORM_H_
+#define NORM_H_
+
+
+float NORM_f32_SlopeSignChange(uint32_t Copy_u32SSC);
+
+float NORM_f32_ZeroCrossing(uint32_t Copy_u32zeroCross);
+
+float NORM_f32_WaveformLength(uint32_t Copy_u3WaveLength);
+
+float NORM_f32_RMS(float Copy_u32RMS);
+
+float NORM_f32_Variance(float Copy_u32Variance);
+
+float NORM_f32_Mean(float Copy_u32Mean);
+
+
+#endif

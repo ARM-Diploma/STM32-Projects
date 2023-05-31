@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;GPIO_Driver_f103/Inc/STM32F446xx.h&apos; to &apos;STM32F103xx.h&apos;" description="Rename resource &apos;STM32F446xx.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Inc/STM32F446xx.h" name="STM32F103xx.h" stamp="1683561169474" updateReferences="true"/>
+</session>

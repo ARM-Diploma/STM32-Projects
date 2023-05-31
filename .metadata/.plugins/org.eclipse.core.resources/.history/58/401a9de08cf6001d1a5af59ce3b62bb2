@@ -1,0 +1,7 @@
+#ifndef NORM_H_
+#define NORM_H_
+
+
+float NORM_f32_SlopeSignChange(float Copy_f32)
+
+#endif

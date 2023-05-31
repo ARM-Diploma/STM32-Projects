@@ -1,0 +1,13 @@
+sine_model.c:270:9:sine_model_configure_activations	2
+sine_model.c:303:9:sine_model_configure_weights	2
+sine_model.c:339:9:ai_sine_model_get_info	4
+sine_model.c:385:9:ai_sine_model_get_report	4
+sine_model.c:431:10:ai_sine_model_get_error	1
+sine_model.c:437:10:ai_sine_model_create	1
+sine_model.c:447:10:ai_sine_model_create_and_init	8
+sine_model.c:481:12:ai_sine_model_inputs_get	2
+sine_model.c:491:12:ai_sine_model_outputs_get	2
+sine_model.c:501:11:ai_sine_model_destroy	1
+sine_model.c:507:9:ai_sine_model_init	2
+sine_model.c:524:8:ai_sine_model_run	1
+sine_model.c:531:8:ai_sine_model_forward	1

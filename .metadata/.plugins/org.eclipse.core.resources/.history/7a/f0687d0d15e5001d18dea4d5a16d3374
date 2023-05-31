@@ -1,0 +1,204 @@
+#include <stdint.h>
+#include <float.h>
+
+#include "FEAT_EXT.h"
+
+
+int32_t FEAT_EXT_int32_SlopeSignChange(int32_t *Copy_int32Data ,int32_t Copy_int32_Size)
+{
+	int32_t Local_int32_NumberOfChanges = 0,
+			Local_int32_Slope[Copy_int32_Size],
+			Local_int32_Counter;
+
+	/*Compute Slope*/
+	Local_int32_Slope[0] = 1;
+
+	for(Local_int32_Counter = 1 ; Local_int32_Counter < Copy_int32_Size ; Local_int32_Counter++)
+	{
+
+		if(Copy_int32Data[Local_int32_Counter]  > Copy_int32Data[Local_int32_Counter-1])
+			Local_int32_Slope[Local_int32_Counter] = 1;
+
+		else if(Copy_int32Data[Local_int32_Counter]  < Copy_int32Data[Local_int32_Counter-1])
+
+			Local_int32_Slope[Local_int32_Counter] = -1;
+
+		else if(Copy_int32Data[Local_int32_Counter] == Copy_int32Data[Local_int32_Counter-1])
+			Local_int32_Slope[Local_int32_Counter] = Local_int32_Slope[Local_int32_Counter-1];
+
+	}
+
+	/*Compute Changes In Sign*/
+	for(Local_int32_Counter = 0 ; Local_int32_Counter < Copy_int32_Size-1 ; Local_int32_Counter++)
+	{
+		if((Local_int32_Slope[Local_int32_Counter] != Local_int32_Slope[Local_int32_Counter+1]))
+		{
+			Local_int32_NumberOfChanges++;
+		}
+	}
+
+	return Local_int32_NumberOfChanges;
+}
+
+int32_t FEAT_EXT_int32_ZeroCrossing(int32_t *Copy_int32Data ,int32_t Copy_int32_Size)
+{
+	int32_t Local_int32_Sign[Copy_int32_Size],
+	Local_int32_Counter,
+	Local_int32_ZeroCounter;
+
+	/*Compute data sign*/
+	for(Local_int32_Counter = 0 ; Local_int32_Counter < Copy_int32_Size ; Local_int32_Counter++)
+	{
+		if(Copy_int32Data[Local_int32_Counter] > 0)
+		{
+			Local_int32_Sign[Local_int32_Counter] = 1;
+		}
+		else if (Copy_int32Data[Local_int32_Counter] <= 0)
+		{
+			Local_int32_Sign[Local_int32_Counter] = -1;
+		}
+	}
+
+	/*Compute zero crossing*/
+	Local_int32_ZeroCounter = 0;
+	for(Local_int32_Counter = 0 ; Local_int32_Counter < Copy_int32_Size-1 ; Local_int32_Counter++)
+	{
+		if(Local_int32_Sign[Local_int32_Counter] != Local_int32_Sign[Local_int32_Counter+1])
+		{
+			Local_int32_ZeroCounter++;
+		}
+	}
+
+
+	return Local_int32_ZeroCounter;
+}
+
+int32_t FEAT_EXT_int32_WaveformLength(int32_t *Copy_int32Data ,int32_t Copy_int32_Size)
+{
+	int32_t Local_int32_AbsDiff[Copy_int32_Size-1],
+	Local_int32_Counter,
+	Local_int32_WaveLength;
+
+	/*Calculate absolute difference of data*/
+	for(Local_int32_Counter = 0 ; Local_int32_Counter < Copy_int32_Size-1 ; Local_int32_Counter++)
+	{
+		if(Copy_int32Data[Local_int32_Counter] > Copy_int32Data[Local_int32_Counter+1])
+		{
+			Local_int32_AbsDiff[Local_int32_Counter] = Copy_int32Data[Local_int32_Counter] -  Copy_int32Data[Local_int32_Counter+1];
+		}
+		else
+		{
+			Local_int32_AbsDiff[Local_int32_Counter] = Copy_int32Data[Local_int32_Counter+1] -  Copy_int32Data[Local_int32_Counter];
+		}
+	}
+
+	/*Compute wave length*/
+	Local_int32_WaveLength = 0;
+
+	for(Local_int32_Counter = 0 ; Local_int32_Counter < Copy_int32_Size-1 ; Local_int32_Counter++)
+	{
+		Local_int32_WaveLength += Local_int32_AbsDiff[Local_int32_Counter];
+	}
+
+
+	return Local_int32_WaveLength;
+}
+
+
+float FEAT_EXT_float_RMS(int32_t *Copy_int32Data ,int32_t Copy_int32_Size)
+{
+
+	int32_t Local_int32_DataSquared = 0,
+			Local_int32_Counter;
+
+	float 	Local_float_Mean = 0,
+			Local_float_RMS;
+
+	for(Local_int32_Counter = 0 ; Local_int32_Counter < Copy_int32_Size ; Local_int32_Counter++)
+	{
+		/*Compute Square*/
+		Local_int32_DataSquared += pow(Copy_int32Data[Local_int32_Counter],2);
+
+	}
+
+	/*Compute Mean*/
+	Local_float_Mean = Local_int32_DataSquared/(float)Copy_int32_Size;
+
+	/*Compute Root*/
+	Local_float_RMS = sqrtf(Local_float_Mean);
+
+	return Local_float_RMS;
+
+}
+
+float FEAT_EXT_float_Variance(int32_t *Copy_int32Data ,int32_t Copy_int32_Size)
+{
+
+	int32_t Local_int32_Counter;
+
+	float 	Local_float_Mean = 0,
+			Local_float_Var  = 0;
+
+	/*Compute Mean*/
+	Local_float_Mean = FEAT_EXT_float_Mean(Copy_int32Data, Copy_int32_Size);
+
+	/*Compute Variance*/
+	for (Local_int32_Counter = 0 ; Local_int32_Counter < Copy_int32_Size ; Local_int32_Counter++)
+	{
+		Local_float_Var += pow(Copy_int32Data[Local_int32_Counter] - Local_float_Mean,2);
+	}
+	Local_float_Var /= (Copy_int32_Size-1);
+
+	return Local_float_Var;
+}
+
+float FEAT_EXT_float_Mean(int32_t *Copy_int32Data ,int32_t Copy_int32_Size)
+{
+	float Local_float_Mean = 0;
+	int32_t Local_int32_Counter;
+
+	for(Local_int32_Counter = 0 ; Local_int32_Counter < Copy_int32_Size ; Local_int32_Counter++)
+	{
+		Local_float_Mean += Copy_int32Data[Local_int32_Counter];
+	}
+
+	Local_float_Mean /= (float)Copy_int32_Size;
+
+	return Local_float_Mean;
+
+}
+float FEAT_EXT_float_MeanAbsolute(int32_t *Copy_int32Data ,int32_t Copy_int32_Size)
+{
+	int32_t Local_int32_Counter;
+	float Local_float_Mean = 0;
+
+	for(Local_int32_Counter = 0 ; Local_int32_Counter < Copy_int32_Size ; Local_int32_Counter++)
+	{
+		Local_float_Mean += abs(Copy_int32Data[Local_int32_Counter]);
+	}
+
+	Local_float_Mean /= Copy_int32_Size;
+
+	return Local_float_Mean;
+
+}
+
+int32_t slope_sign_changes(int32_t *data, int32_t size)
+{
+    // Compute the slopes
+    int32_t slopes[size-1];
+    for (int i = 0; i < size-1; i++) {
+        slopes[i] = data[i+1] - data[i];
+    }
+
+    // Compute the sign changes in the slopes
+    int32_t sign_changes = 0;
+    for (int i = 0; i < size-2; i++) {
+        if (slopes[i]*slopes[i+1] < 0) {
+            sign_changes++;
+        }
+    }
+
+    // Return the number of sign changes
+    return sign_changes;
+

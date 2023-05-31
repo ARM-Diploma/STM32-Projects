@@ -1,9 +1,0 @@
-#include "stdint.h"
-
-
-#ifndef SERVO_H_
-#define SERVO_H_
-
-
-uint32_t
-#endif

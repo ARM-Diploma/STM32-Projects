@@ -1,0 +1,10 @@
+23:56:16 **** Incremental Build of configuration Debug for project RCC_Driver_f4 ****
+make -j4 all 
+arm-none-eabi-size   RCC_Driver_f4.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2212	      8	   1568	   3788	    ecc	RCC_Driver_f4.elf
+Finished building: default.size.stdout
+ 
+
+23:56:16 Build Finished. 0 errors, 0 warnings. (took 364ms)
+

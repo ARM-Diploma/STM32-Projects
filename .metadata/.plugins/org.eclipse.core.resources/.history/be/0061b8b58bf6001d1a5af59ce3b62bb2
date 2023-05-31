@@ -1,0 +1,19 @@
+#ifndef FEAT_EXT_H_
+#define FEAT_EXT_H_
+
+
+int32_t FEAT_EXT_int32_SlopeSignChange(int32_t *Copy_int32Data ,int32_t Copy_int32_Size);
+
+int32_t FEAT_EXT_int32_ZeroCrossing(int32_t *Copy_int32Data ,int32_t Copy_int32_Size);
+
+int32_t FEAT_EXT_int32_WaveformLength(int32_t *Copy_int32Data ,int32_t Copy_int32_Size);
+
+float FEAT_EXT_float_RMS(float Copy_float_Variance);
+
+float FEAT_EXT_float_Variance(int32_t *Copy_int32Data ,int32_t Copy_int32_Size);
+
+float FEAT_EXT_float_Mean(int32_t *Copy_int32Data ,int32_t Copy_int32_Size);
+
+float FEAT_EXT_float_MeanAbsolute(int32_t *Copy_int32Data ,int32_t Copy_int32_Size);
+
+#endif

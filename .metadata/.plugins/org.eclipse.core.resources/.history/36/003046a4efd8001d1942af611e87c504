@@ -1,8 +1,0 @@
-#ifndef PWM_H_
-#define PWM_H_
-
-#include "../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
-
-int8_t PWM_int32SetPWMValue(TIM_HandleTypeDef *htim,int32_t Copy_int32Channel,int32_t Copy_int32Value);
-
-#endif

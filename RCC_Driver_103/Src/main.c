@@ -30,10 +30,18 @@
 int main(void)
 {
 
+	RCC_u8SetClockSrc(RCC_HSE_CLK, RCC_ON);
+	RCC_u8HSEConfig(RCC_DIV_BY_2);
 
-	RCC_Int8PLLConfig(RCC_PLL_MUL_13, RCC_HSI_CLK);
+	RCC_u8SetSysClock(RCC_HSE_CLK);
 
-	RCC_Int8SetClockSrc(RCC_PLL_CLK, RCC_ON);
+
+	RCC_u8PLLConfig(RCC_PLL_MUL_10, RCC_HSE_CLK);
+
+	RCC_u8PeripheralClkEnable(TIM1,RCC_APB2_CLK );
+	RCC_u8PeripheralClkDisable(TIM1,RCC_APB2_CLK );
+
+	uint8_t temp = RCC_u8GetSysClk();
 
     /* Loop forever */
 	for(;;);

@@ -1,0 +1,17 @@
+17:39:37 **** Incremental Build of configuration Debug for project Assign1_CommBetwn2Board_f3 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Assign1_CommBetwn2Board_f3.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\Embedded ARM\STM32 Projects\Assign1_CommBetwn2Board_f3\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assign1_CommBetwn2Board_f3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Assign1_CommBetwn2Board_f3.elf
+ 
+arm-none-eabi-size   Assign1_CommBetwn2Board_f3.elf 
+arm-none-eabi-objdump -h -S  Assign1_CommBetwn2Board_f3.elf  > "Assign1_CommBetwn2Board_f3.list"
+   text	   data	    bss	    dec	    hex	filename
+   1412	     44	   1564	   3020	    bcc	Assign1_CommBetwn2Board_f3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Assign1_CommBetwn2Board_f3.list
+ 
+
+17:39:38 Build Finished. 0 errors, 0 warnings. (took 650ms)
+

@@ -1,0 +1,39 @@
+17:18:23 **** Incremental Build of configuration Debug for project Feature_Extraction ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:111:4: warning: variable 'Local_f32NormWVL' set but not used [-Wunused-but-set-variable]
+  111 |    Local_f32NormWVL;
+      |    ^~~~~~~~~~~~~~~~
+../Src/main.c:110:4: warning: variable 'Local_f32NormZC' set but not used [-Wunused-but-set-variable]
+  110 |    Local_f32NormZC,
+      |    ^~~~~~~~~~~~~~~
+../Src/main.c:109:4: warning: variable 'Local_f32NormSSC' set but not used [-Wunused-but-set-variable]
+  109 |    Local_f32NormSSC,
+      |    ^~~~~~~~~~~~~~~~
+../Src/main.c:108:4: warning: variable 'Local_f32NormMean' set but not used [-Wunused-but-set-variable]
+  108 |    Local_f32NormMean,
+      |    ^~~~~~~~~~~~~~~~~
+../Src/main.c:107:4: warning: variable 'Local_f32NormVar' set but not used [-Wunused-but-set-variable]
+  107 |    Local_f32NormVar,
+      |    ^~~~~~~~~~~~~~~~
+../Src/main.c:106:9: warning: variable 'Local_f32NormRMS' set but not used [-Wunused-but-set-variable]
+  106 |  float  Local_f32NormRMS,
+      |         ^~~~~~~~~~~~~~~~
+../Src/main.c:28:11: warning: unused variable 'Data0' [-Wunused-variable]
+   28 |  uint32_t Data0[250] = {0   , 0  , 0  , 0  , 96 , 94 , 0  , 3  , 5   , 20  ,
+      |           ^~~~~
+arm-none-eabi-gcc -o "Feature_Extraction.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\Embedded ARM\STM32 Projects\Feature_Extraction\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Feature_Extraction.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Feature_Extraction.elf
+ 
+arm-none-eabi-size   Feature_Extraction.elf 
+arm-none-eabi-objdump -h -S  Feature_Extraction.elf  > "Feature_Extraction.list"
+   text	   data	    bss	    dec	    hex	filename
+  13184	    108	   1564	  14856	   3a08	Feature_Extraction.elf
+Finished building: default.size.stdout
+Finished building: Feature_Extraction.list
+ 
+ 
+
+17:18:49 Build Finished. 0 errors, 7 warnings. (took 26s.286ms)
+

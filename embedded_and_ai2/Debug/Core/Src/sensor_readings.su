@@ -1,0 +1,5 @@
+../Core/Src/sensor_readings.c:10:10:analogRead	24	static
+../Core/Src/sensor_readings.c:28:6:serial_println	32	static
+../Core/Src/sensor_readings.c:36:6:serial_print	32	static
+../Core/Src/sensor_readings.c:44:6:serial_print_str	32	static
+../Core/Src/sensor_readings.c:51:10:get_val	24	static

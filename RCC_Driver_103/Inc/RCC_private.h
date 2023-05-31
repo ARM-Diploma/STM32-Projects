@@ -1,29 +1,29 @@
 #ifndef RCC_PRIVATE_H_
 #define RCC_PRIVATE_H_
 
-#define RCC_READY			1
-#define RCC_NOT_READY		2
+#define RCC_READY				1
+#define RCC_NOT_READY			2
 
 
-#define RCC_CLK_TIMEOUT		1000
+#define RCC_CLK_TIMEOUT			1000
 
-#define RCC_BASE_ADDRESS		(int32_t)0x40021000
+#define RCC_BASE_ADDRESS		(uint32_t)0x40021000
 typedef struct
 {
-	int32_t CR;
-	int32_t CFGR;
-	int32_t CIR;
-	int32_t APB2RSTR;
-	int32_t APB1RSTR;
-	int32_t AHBENR;
-	int32_t APB2ENR;
-	int32_t APB1ENR;
-	int32_t BDCR;
-	int32_t CSR;
+	uint32_t CR;
+	uint32_t CFGR;
+	uint32_t CIR;
+	uint32_t APB2RSTR;
+	uint32_t APB1RSTR;
+	uint32_t AHBENR;
+	uint32_t APB2ENR;
+	uint32_t APB1ENR;
+	uint32_t BDCR;
+	uint32_t CSR;
 
 }RCC_T;
 
-#define RCC				((volatile RCC_T*)RCC_BASE_ADDRESS)
+#define RCC						((volatile RCC_T*)RCC_BASE_ADDRESS)
 
 		/*********	CR register bits	*********/
 #define RCC_CR_HSION			0	/*Enable HSI bit*/

@@ -1,17 +1,10 @@
-07:13:48 **** Incremental Build of configuration Debug for project NUCLEO_MX_STM ****
+23:23:44 **** Incremental Build of configuration Debug for project NUCLEO_MX_STM ****
 make -j4 all 
-arm-none-eabi-gcc "../Core/Src/servo.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/servo.d" -MT"Core/Src/servo.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/servo.o"
-arm-none-eabi-gcc -o "NUCLEO_MX_STM.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\Embedded ARM\STM32 Projects\NUCLEO_MX_STM\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUCLEO_MX_STM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: NUCLEO_MX_STM.elf
- 
 arm-none-eabi-size   NUCLEO_MX_STM.elf 
-arm-none-eabi-objdump -h -S  NUCLEO_MX_STM.elf  > "NUCLEO_MX_STM.list"
    text	   data	    bss	    dec	    hex	filename
-  23804	    120	   2304	  26228	   6674	NUCLEO_MX_STM.elf
+  20404	     20	   2284	  22708	   58b4	NUCLEO_MX_STM.elf
 Finished building: default.size.stdout
  
-Finished building: NUCLEO_MX_STM.list
- 
 
-07:13:50 Build Finished. 0 errors, 0 warnings. (took 1s.278ms)
+23:23:45 Build Finished. 0 errors, 0 warnings. (took 1s.304ms)
 

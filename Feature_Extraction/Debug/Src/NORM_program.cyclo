@@ -1,0 +1,6 @@
+NORM_program.c:8:7:NORM_f32_SlopeSignChange	5
+NORM_program.c:23:7:NORM_f32_ZeroCrossing	5
+NORM_program.c:37:7:NORM_f32_WaveformLength	5
+NORM_program.c:50:7:NORM_f32_RMS	5
+NORM_program.c:64:7:NORM_f32_Variance	5
+NORM_program.c:78:7:NORM_f32_Mean	5

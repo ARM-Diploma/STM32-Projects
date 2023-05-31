@@ -1,0 +1,6 @@
+../Src/RCC_program.c:10:9:RCC_u8SetClockSrc	24	static
+../Src/RCC_program.c:151:9:RCC_u8SetSysClock	24	static
+../Src/RCC_program.c:187:9:RCC_u8PLLConfig	24	static
+../Src/RCC_program.c:243:9:RCC_u8PeripheralClkEnable	24	static
+../Src/RCC_program.c:260:9:RCC_u8PeripheralClkDisable	24	static
+../Src/RCC_program.c:276:9:RCC_u8GetSysClk	16	static

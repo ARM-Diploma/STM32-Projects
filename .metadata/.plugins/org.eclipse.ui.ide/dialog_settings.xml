@@ -19,6 +19,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="F:\Embedded ARM\STM32 Projects\embedded_and_ai"/>
 			<item value="F:\Embedded ARM\STM32 Projects\NUCLEO_MX_STM"/>
 			<item value="F:\مشروع التخرج\DRIVERS\Embedded_Drivers\NUCLEO_MX_STM"/>
 			<item value="C:\Users\Hanin Anwar\Desktop\TEST"/>

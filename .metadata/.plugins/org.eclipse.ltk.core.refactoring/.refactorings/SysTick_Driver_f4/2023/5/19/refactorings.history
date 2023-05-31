@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;SysTick_Driver_f4/Inc/Delay.h&apos; to &apos;SysTick_Delay.h&apos;" description="Rename resource &apos;Delay.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Inc/Delay.h" name="SysTick_Delay.h" stamp="1683899562360" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;SysTick_Driver_f4/Src/Delay.c&apos; to &apos;SysTick_Delay.c&apos;" description="Rename resource &apos;Delay.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Src/Delay.c" name="SysTick_Delay.c" stamp="1683899571517" updateReferences="true"/>
+</session>

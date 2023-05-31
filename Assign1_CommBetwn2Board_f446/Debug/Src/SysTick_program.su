@@ -1,0 +1,5 @@
+../Src/SysTick_program.c:23:9:SysTick_u8SetClkSrc	24	static
+../Src/SysTick_program.c:40:9:SysTick_u8ClkControl	24	static
+../Src/SysTick_program.c:56:9:SysTick_u8ReadClkValue	24	static
+../Src/SysTick_program.c:65:9:SysTick_u8GetCounterFlag	16	static
+../Src/SysTick_program.c:73:9:SysTick_u8SetPreloadVal	24	static

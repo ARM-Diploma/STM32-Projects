@@ -1,0 +1,5 @@
+sensor_readings.c:10:10:analogRead	3
+sensor_readings.c:28:6:serial_println	1
+sensor_readings.c:36:6:serial_print	1
+sensor_readings.c:44:6:serial_print_str	1
+sensor_readings.c:51:10:get_val	2

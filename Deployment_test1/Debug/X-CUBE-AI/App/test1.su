@@ -1,0 +1,11 @@
+../X-CUBE-AI/App/test1.c:612:9:ai_test1_get_info	144	static
+../X-CUBE-AI/App/test1.c:658:9:ai_test1_get_report	144	static
+../X-CUBE-AI/App/test1.c:704:10:ai_test1_get_error	0	static
+../X-CUBE-AI/App/test1.c:710:10:ai_test1_create	16	static
+../X-CUBE-AI/App/test1.c:754:12:ai_test1_inputs_get	0	static
+../X-CUBE-AI/App/test1.c:764:12:ai_test1_outputs_get	0	static
+../X-CUBE-AI/App/test1.c:774:11:ai_test1_destroy	0	static
+../X-CUBE-AI/App/test1.c:780:9:ai_test1_init	24	static
+../X-CUBE-AI/App/test1.c:720:10:ai_test1_create_and_init	88	static
+../X-CUBE-AI/App/test1.c:797:8:ai_test1_run	0	static
+../X-CUBE-AI/App/test1.c:804:8:ai_test1_forward	0	static

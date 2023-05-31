@@ -1,0 +1,72 @@
+00:40:13 **** Incremental Build of configuration Debug for project HAL_Comp_f103 ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/GPIO_program.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/GPIO_program.d" -MT"Src/GPIO_program.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/GPIO_program.o"
+arm-none-eabi-gcc "../Src/SSD_program.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/SSD_program.d" -MT"Src/SSD_program.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/SSD_program.o"
+arm-none-eabi-gcc "../Src/SysTick_Delay.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/SysTick_Delay.d" -MT"Src/SysTick_Delay.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/SysTick_Delay.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/GPIO_program.c: In function 'GPIO_u8PinInit':
+../Src/GPIO_program.c:34:15: warning: comparison between pointer and integer
+   34 |  if(PinConfig != NULL)
+      |               ^~
+../Src/GPIO_program.c:42:30: error: 'GPIO_RegDef_T' has no member named 'CR'; did you mean 'CRL'?
+   42 |   GPIOPort[PinConfig->Port]->CR[Local_u8RegNum] &= ~(CLR_MODE_SHIFT << Local_u8ModeBitNum);
+      |                              ^~
+      |                              CRL
+../Src/GPIO_program.c:43:30: error: 'GPIO_RegDef_T' has no member named 'CR'; did you mean 'CRL'?
+   43 |   GPIOPort[PinConfig->Port]->CR[Local_u8RegNum] |=  (PinConfig->Mode << Local_u8ModeBitNum);
+      |                              ^~
+      |                              CRL
+../Src/GPIO_program.c:48:30: error: 'GPIO_RegDef_T' has no member named 'CR'; did you mean 'CRL'?
+   48 |   GPIOPort[PinConfig->Port]->CR[Local_u8RegNum] &= ~(CLR_MODE_SHIFT << Local_u8ConfBitNum);
+      |                              ^~
+      |                              CRL
+../Src/GPIO_program.c:49:30: error: 'GPIO_RegDef_T' has no member named 'CR'; did you mean 'CRL'?
+   49 |   GPIOPort[PinConfig->Port]->CR[Local_u8RegNum] |= (PinConfig->InputOutConfig << Local_u8ConfBitNum);
+      |                              ^~
+      |                              CRL
+../Src/GPIO_program.c:29:4: warning: variable 'Local_u8RegNum' set but not used [-Wunused-but-set-variable]
+   29 |    Local_u8RegNum,
+      |    ^~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:40: Src/GPIO_program.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Src/SSD_program.c: In function 'SSD_u8SetNumber':
+../Src/SSD_program.c:138:6: warning: implicit declaration of function 'DIO_u8SetPortValue'; did you mean 'GPIO_u8SetPinValue'? [-Wimplicit-function-declaration]
+  138 |      DIO_u8SetPortValue(SSD->Port,~Local_NumArr[Copy_u8Number]);
+      |      ^~~~~~~~~~~~~~~~~~
+      |      GPIO_u8SetPinValue
+../Src/SSD_program.c:142:6: warning: implicit declaration of function 'DIO_u8SetPinValue'; did you mean 'GPIO_u8SetPinValue'? [-Wimplicit-function-declaration]
+  142 |      DIO_u8SetPinValue(SSD->EnablePort ,SSD->EnablePin , DIO_u8PIN_LOW);
+      |      ^~~~~~~~~~~~~~~~~
+      |      GPIO_u8SetPinValue
+../Src/SSD_program.c:142:58: error: 'DIO_u8PIN_LOW' undeclared (first use in this function)
+  142 |      DIO_u8SetPinValue(SSD->EnablePort ,SSD->EnablePin , DIO_u8PIN_LOW);
+      |                                                          ^~~~~~~~~~~~~
+../Src/SSD_program.c:142:58: note: each undeclared identifier is reported only once for each function it appears in
+../Src/SSD_program.c: In function 'SSD_u8Enable':
+../Src/SSD_program.c:160:55: error: 'DIO_u8PIN_HIGH' undeclared (first use in this function)
+  160 |   DIO_u8SetPinValue(SSD->EnablePort ,SSD->EnablePin , DIO_u8PIN_HIGH);
+      |                                                       ^~~~~~~~~~~~~~
+../Src/SSD_program.c:164:55: error: 'DIO_u8PIN_LOW' undeclared (first use in this function)
+  164 |   DIO_u8SetPinValue(SSD->EnablePort ,SSD->EnablePin , DIO_u8PIN_LOW);
+      |                                                       ^~~~~~~~~~~~~
+../Src/SSD_program.c: In function 'SSD_u8Disable':
+../Src/SSD_program.c:181:55: error: 'DIO_u8PIN_LOW' undeclared (first use in this function)
+  181 |   DIO_u8SetPinValue(SSD->EnablePort ,SSD->EnablePin , DIO_u8PIN_LOW);
+      |                                                       ^~~~~~~~~~~~~
+../Src/SSD_program.c:185:55: error: 'DIO_u8PIN_HIGH' undeclared (first use in this function)
+  185 |   DIO_u8SetPinValue(SSD->EnablePort ,SSD->EnablePin , DIO_u8PIN_HIGH);
+      |                                                       ^~~~~~~~~~~~~~
+../Src/SSD_program.c: In function 'SSD_u8Init':
+../Src/SSD_program.c:119:1: warning: control reaches end of non-void function [-Wreturn-type]
+  119 | }
+      | ^
+../Src/SysTick_Delay.c:4:10: fatal error: ../Inc/STM32F446xx.h: No such file or directory
+    4 | #include "../Inc/STM32F446xx.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:40: Src/SysTick_Delay.o] Error 1
+make: *** [Src/subdir.mk:40: Src/SSD_program.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+00:40:14 Build Failed. 14 errors, 5 warnings. (took 482ms)
+

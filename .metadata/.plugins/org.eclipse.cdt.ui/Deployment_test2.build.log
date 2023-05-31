@@ -1,0 +1,10 @@
+03:50:05 **** Incremental Build of configuration Debug for project Deployment_test2 ****
+make -j4 all 
+arm-none-eabi-size   Deployment_test2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29604	    140	   4836	  34580	   8714	Deployment_test2.elf
+Finished building: default.size.stdout
+ 
+
+03:50:06 Build Finished. 0 errors, 0 warnings. (took 449ms)
+
